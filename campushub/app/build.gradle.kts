@@ -1,5 +1,6 @@
 plugins {
     alias(libs.plugins.android.application)
+    id("kotlin-parcelize")
 }
 
 android {
@@ -29,6 +30,9 @@ android {
         sourceCompatibility = JavaVersion.VERSION_11
         targetCompatibility = JavaVersion.VERSION_11
     }
+    buildFeatures {
+        viewBinding = true
+    }
 }
 
 dependencies {
@@ -40,4 +44,7 @@ dependencies {
     testImplementation(libs.junit)
     androidTestImplementation(libs.androidx.espresso.core)
     androidTestImplementation(libs.androidx.junit)
+    implementation("com.android.volley:volley:1.2.1")
+    implementation("com.google.code.gson:gson:2.10.1")
+    implementation("com.squareup.picasso:picasso:2.8")
 }
